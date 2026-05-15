@@ -1,0 +1,50 @@
+Evaluate the following story using a structured rating system.
+
+Use the full scale from 1 to 5 as defined, where:
+1 = very poor, 2 = poor, 3 = average, 4 = good, 5 = excellent.
+
+Evaluate the story on the following six metrics:
+1. Relevance
+2. Coherence
+3. Empathy
+4. Surprise
+5. Engagement
+6. Complexity
+
+Definitions:
+- Relevance: How well the story matches the given prompt.
+- Coherence: How logically consistent and well-structured the story is.
+- Empathy: The emotional depth of the story and its ability to evoke feelings.
+- Surprise: The degree of unexpectedness or originality in the story.
+- Engagement: How interesting and captivating the story is.
+- Complexity: The richness, depth, and sophistication of the narrative.
+
+Return ONLY a valid JSON object with exactly these keys:
+relevance, coherence, empathy, surprise, engagement, complexity, justifications.
+
+Rules:
+- Scores must be integers from 1 to 5.
+- Do not include any text outside the JSON.
+- Do not include explanations outside the "justifications" field.
+- The "justifications" field must be an object with exactly these keys:
+  relevance, coherence, empathy, surprise, engagement, complexity
+- Each justification must be short, at most 1 to 2 sentences.
+- Do not include markdown.
+
+Example format:
+{
+  "relevance": 4,
+  "coherence": 3,
+  "empathy": 2,
+  "surprise": 4,
+  "engagement": 3,
+  "complexity": 2,
+  "justifications": {
+    "relevance": "The story follows the prompt closely.",
+    "coherence": "Some transitions are unclear.",
+    "empathy": "Limited emotional depth.",
+    "surprise": "Contains an unexpected twist.",
+    "engagement": "Moderately interesting throughout.",
+    "complexity": "Simple narrative structure."
+  }
+}
